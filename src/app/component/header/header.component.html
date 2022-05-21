@@ -5,27 +5,32 @@
     >
         <img
             class="logo"
-            src="/assets/logo.svg"
+            src="/assets/logo-placeholder-image.png"
             alt=""
         />
     </a>
     <div class="options">
         <a
             class="option"
-            routerLink="shop"
+            routerLink="/product-views"
         >Shop</a>
 
-        <a class="option">Sign Out</a>
+        <a
+            *ngIf="user; else signin"
+            class="option"
+            (click)="signOut()"
+        >Sign Out</a>
         <ng-template
             #signin
             class="option"
         >
-            <a routerLink="signin">Sign In</a>
+            <a routerLink="user-login">Sign In</a>
         </ng-template>
 
         <a
             class="option"
-            routerLink="signup"
+            routerLink="user-registration"
         >Sign Up</a>
     </div>
 </header>
+<router-outlet></router-outlet>

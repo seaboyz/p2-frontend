@@ -5,13 +5,15 @@ import { catchError, Observable, retry, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class ProductService
+{
 
   baseUrl: string = "http://localhost:8080/products";
 
   constructor(private http: HttpClient) { }
 
-  viewAllProducts(): Observable<any> {
+  viewAllProducts(): Observable<any>
+  {
     console.log("made it to product service view all products");
     return this.http.get<object>(this.baseUrl + "/all", { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .pipe(
@@ -20,7 +22,8 @@ export class ProductService {
       )
   }
 
-  errorHandler(e: any): any {
+  errorHandler(e: any): any
+  {
     console.log("Error handler invoked...");
     let errorMessage = '';
     if (e.error instanceof ErrorEvent) {
@@ -36,20 +39,25 @@ export class ProductService {
 
 }
 
-export class Product {
-  category: String;
-  description: String;
+export class Product
+{
+  category: string;
+  description: string;
   inventory: number;
-  name: String;
+  name: string;
   price: number;
   productId: number;
+  image: string;
 
-  constructor(_category: String, _description: String, _inventory: number, _name: String, _price: number, _productId: number) {
+  constructor(_category: string, _description: string, _inventory: number, _name: string, _price: number, _productId: number, _image: string)
+  {
     this.category = _category;
     this.description = _description;
     this.inventory = _inventory;
     this.name = _name;
     this.price = _price;
     this.productId = _productId;
+    this.image = _image;
+
   }
 }

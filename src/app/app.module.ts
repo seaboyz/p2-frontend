@@ -15,6 +15,9 @@ import { AuthService } from './services/auth.service';
 import { ProductViewsComponent } from './pages/product-views/product-views.component';
 import { SearchBoxComponent } from './component/search-box/search-box.component';
 import { HeaderComponent } from "./component/header/header.component";
+import { ProductComponent } from './component/product/product.component';
+import { ProductsComponent } from './component/products/products.component';
+import { AddToCartBtnComponent } from './component/add-to-cart-btn/add-to-cart-btn.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { HeaderComponent } from "./component/header/header.component";
     ContentComponent,
     ProductViewsComponent,
     SearchBoxComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductComponent,
+    ProductsComponent,
+    AddToCartBtnComponent
   ],
   imports: [
     BrowserModule,
