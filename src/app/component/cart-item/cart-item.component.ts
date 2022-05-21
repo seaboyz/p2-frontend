@@ -3,10 +3,10 @@ import { CartItem } from "src/app/shared/interface/cartItem";
 
 @Component({
   selector: 'app-checkout-item',
-  templateUrl: './checkout-item.component.html',
-  styleUrls: ['./checkout-item.component.scss']
+  templateUrl: './cart-item.component.html',
+  styleUrls: ['./cart-item.component.scss']
 })
-export class CheckoutItemComponent implements OnInit
+export class CartItemComponent implements OnInit
 {
 
   @Input() cartItem: CartItem | any;

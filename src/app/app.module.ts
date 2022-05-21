@@ -18,9 +18,11 @@ import { HeaderComponent } from "./component/header/header.component";
 import { ProductComponent } from './component/product/product.component';
 import { ProductsComponent } from './component/products/products.component';
 import { CustomBtn } from "./component/custom-btn/custom-btn.component";
-import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { CheckoutItemComponent } from './component/checkout-item/checkout-item.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CartItemComponent } from './component/cart-item/cart-item.component';
 import { PlaceOrderBtnComponent } from './component/place-order-btn/place-order-btn.component';
+import { CheckoutBtnComponent } from './component/checkout-btn/checkout-btn.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +38,11 @@ import { PlaceOrderBtnComponent } from './component/place-order-btn/place-order-
     ProductComponent,
     ProductsComponent,
     CustomBtn,
-    CheckoutComponent,
-    CheckoutItemComponent,
-    PlaceOrderBtnComponent
+    CartComponent,
+    CartItemComponent,
+    PlaceOrderBtnComponent,
+    CheckoutBtnComponent,
+    CheckoutComponent
 
   ],
   imports: [

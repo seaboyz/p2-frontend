@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CartItem } from "src/app/shared/interface/cartItem";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-checkout',
@@ -8,11 +7,20 @@ import { CartItem } from "src/app/shared/interface/cartItem";
 })
 export class CheckoutComponent implements OnInit
 {
-  @Input() cartItems: CartItem[] = [];
-
-  totalPrice = 0;
 
   constructor() { }
+
+  username: String = "";
+  password: String = "";
+  fName: String = "";
+  lName: String = "";
+  email: String = "";
+  phone: String = "";
+
+  onClickPlaceOrder(username: String, password: String, fName: String, lName: String, email: String)
+  {
+
+  }
 
   ngOnInit(): void
   {

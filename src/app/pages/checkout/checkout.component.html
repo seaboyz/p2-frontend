@@ -1,36 +1,69 @@
-<div class='checkout-page'>
-    <div class='checkout-header'>
-        <div class='header-block'>
-            <span>Product</span>
-        </div>
-        <div class='header-block'>
-            <span>Description</span>
-        </div>
-        <div class='header-block'>
-            <span>Quantity</span>
-        </div>
-        <div class='header-block'>
-            <span>Price</span>
-        </div>
-        <div class='header-block'>
-            <span>Remove</span>
-        </div>
+<h2>CHECKOUT</h2>
+<span>BILLING DETIALS</span>
+<form
+    (ngSubmit)="onClickPlaceOrder(username,password,fName,lName,email)"
+    #signInForm="ngForm"
+>
+    <div class="group">
+        <label for="firstname">First Name</label>
+        <input
+            type="firstname"
+            class="form-input"
+            id="firstname"
+            required
+            name="firstname"
+            [(ngModel)]="fName"
+        />
     </div>
-
-    <app-checkout-item
-        *ngFor="let cartItem of cartItems"
-        [cartItem]="cartItem"
-    ></app-checkout-item>
-
-    <div class='total'>
-        <span>Total: {{totalPrice}}</span>
+    <div class="group">
+        <label for="lastname">Last Name</label>
+        <input
+            type="lastname"
+            class="form-input"
+            id="lastname"
+            required
+            name="lastname"
+            [(ngModel)]="lName"
+        />
     </div>
-    <div style="color: red;text-align: center;">
-        <h2 style="font-size: 1.5rem;">
-            * Plsese use the following test credit card from payments*
-        </h2>
-        <p style="font-size: 1.5rem;">
-            4242 4242 4242 4242 -- Exp: 01/25 -- CVV: 123
-        </p>
+    <div class="group">
+        <label for="email">Email</label>
+        <input
+            type="email"
+            class="form-input"
+            id="email"
+            required
+            name="email"
+            [(ngModel)]="email"
+        />
     </div>
-    <app-place-order-btn></app-place-order-btn>
+    <div class="group">
+        <label for="phone">Phone Number</label>
+        <input
+            type="phone"
+            class="form-input"
+            id="phone"
+            required
+            name="phone"
+            [(ngModel)]="phone"
+        />
+    </div>
+    <div class="group">
+        <label for="password">Password</label>
+        <input
+            type="password"
+            class="form-input"
+            id="password"
+            required
+            name="password"
+            [(ngModel)]="password"
+        />
+    </div>
+    <button
+        class="custom-button"
+        type="submit"
+        [disabled]="!signInForm.form.valid"
+    >
+        Sign Up
+    </button>
+</form>
