@@ -1,21 +1,70 @@
-<p>user-registration works!</p>
-<h1>Registration</h1>
-<div>
-    <label>Username:</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username">
-    <br>
-    <label>Password:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password">
-    <br>
-    <label>First Name:</label>
-    <input type="text" id="fName" name="fName" [(ngModel)]="fName">
-    <br>
-    <label>Last Name:</label>
-    <input type="text" id="lName" name="lName" [(ngModel)]="lName">
-    <br>
-    <label>Email:</label>
-    <input type="text" id="email" name="email" [(ngModel)]="email">
-</div>
+<h2>I am new</h2>
+<span>Sign up with your eamil and password</span>
+<form
+  (ngSubmit)="onClickRegister(username,password,fName,lName,email)"
+  #signInForm="ngForm"
+>
+  <div class="group">
+    <label for="firstname">First Name</label>
+    <input
+      type="firstname"
+      class="form-input"
+      id="firstname"
+      required
+      name="firstname"
+      [(ngModel)]="fName"
+    />
+  </div>
+  <div class="group">
+    <label for="lastname">Last Name</label>
+    <input
+      type="lastname"
+      class="form-input"
+      id="lastname"
+      required
+      name="lastname"
+      [(ngModel)]="lName"
+    />
+  </div>
+  <div class="group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      class="form-input"
+      id="email"
+      required
+      name="email"
+      [(ngModel)]="email"
+    />
+  </div>
+  <div class="group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-input"
+      id="password"
+      required
+      name="password"
+      [(ngModel)]="password"
+    />
+  </div>
+  <!-- <div class="group">
+    <label for="comfirmPassword">Confirm Password</label>
+    <input
+      type="password"
+      class="form-input"
+      id="comfirmPassword"
+      required
+      name="comfirmPassword"
+      [(ngModel)]="confirmPassword"
+    />
+  </div> -->
 
-<input type="submit" value="Register" name="Register"
-    (click)="onClickRegister((username), (password), (fName), (lName), (email))">
+  <button
+    class="custom-button"
+    type="submit"
+    [disabled]="!signInForm.form.valid"
+  >
+    Sign Up
+  </button>
+</form>
