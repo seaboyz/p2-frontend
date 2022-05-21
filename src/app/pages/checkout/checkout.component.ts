@@ -10,20 +10,25 @@ export class CheckoutComponent implements OnInit
 
   constructor() { }
 
-  username: String = "";
-  password: String = "";
-  fName: String = "";
-  lName: String = "";
-  email: String = "";
-  phone: String = "";
+  username: string = "";
+  password: string = "";
+  fName: string = "";
+  lName: string = "";
+  email: string = "";
+  phone: string = "";
+  address: string = "";
+  zipCode: string = "";
+  city: string = "";
+  country: string = "";
+  cardNumber: string = "";
+  exp:string="";
+  cvv:string="";
 
-  onClickPlaceOrder(username: String, password: String, fName: String, lName: String, email: String)
-  {
 
-  }
+  onClickPlaceOrder() { }
 
   ngOnInit(): void
   {
-  }
 
+  }
 }

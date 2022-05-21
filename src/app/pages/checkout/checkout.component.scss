@@ -1,0 +1,124 @@
+$sub-color: grey;
+$main-color: black;
+
+@mixin shrinkLabel {
+    top: -14px;
+    font-size: 12px;
+    color: $main-color;
+}
+
+form {
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 65%;
+
+    span{
+        font-weight: 600;
+        font-size: large;
+        color: black;
+    }
+
+    .billing {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .shipping {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .payment {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .group {
+        position: relative;
+        width: 45%;
+        margin-bottom: 10px;
+
+        label{
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            background: none;
+            background-color: white;
+            color: $sub-color;
+            font-size: 18px;
+            display: block;
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid $sub-color;
+            // margin: 25px 0;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:focus~.form-input-label {
+                @include shrinkLabel();
+            }
+        }
+
+        input[type="password"] {
+            letter-spacing: 0.3em;
+        }
+
+        .form-input-label {
+            color: $sub-color;
+            font-size: 16px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 10px;
+            transition: 300ms ease all;
+
+            &.shrink {
+                @include shrinkLabel();
+            }
+        }
+    }
+
+
+
+
+
+
+    .custom-button {
+        min-width: 165px;
+        width: auto;
+        height: 50px;
+        letter-spacing: 0.5px;
+        line-height: 50px;
+        padding: 0 35px 0 35px;
+        font-size: 15px;
+        background-color: black;
+        color: white;
+        text-transform: uppercase;
+        font-family: "Open Sans Condensed";
+        font-weight: bolder;
+        border: none;
+        cursor: pointer;
+
+        &:disabled {
+            background-color: #aaa;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+    }
+}

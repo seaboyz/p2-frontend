@@ -1,69 +1,143 @@
 <h2>CHECKOUT</h2>
-<span>BILLING DETIALS</span>
+
 <form
-    (ngSubmit)="onClickPlaceOrder(username,password,fName,lName,email)"
+    (ngSubmit)="onClickPlaceOrder()"
     #signInForm="ngForm"
 >
-    <div class="group">
-        <label for="firstname">First Name</label>
-        <input
-            type="firstname"
-            class="form-input"
-            id="firstname"
-            required
-            name="firstname"
-            [(ngModel)]="fName"
-        />
+    <span>BILLING DETIALS</span>
+    <div class="billing">
+
+        <div class="group">
+            <label for="firstname">First Name</label>
+            <input
+                type="firstname"
+                class="form-input"
+                id="firstname"
+                required
+                name="firstname"
+                [(ngModel)]="fName"
+            />
+        </div>
+        <div class="group">
+            <label for="lastname">Last Name</label>
+            <input
+                type="lastname"
+                class="form-input"
+                id="lastname"
+                required
+                name="lastname"
+                [(ngModel)]="lName"
+            />
+        </div>
+        <div class="group">
+            <label for="email">Email</label>
+            <input
+                type="email"
+                class="form-input"
+                id="email"
+                required
+                name="email"
+                [(ngModel)]="email"
+            />
+        </div>
+        <div class="group">
+            <label for="phone">Phone Number</label>
+            <input
+                type="phone"
+                class="form-input"
+                id="phone"
+                required
+                name="phone"
+                [(ngModel)]="phone"
+            />
+        </div>
     </div>
-    <div class="group">
-        <label for="lastname">Last Name</label>
-        <input
-            type="lastname"
-            class="form-input"
-            id="lastname"
-            required
-            name="lastname"
-            [(ngModel)]="lName"
-        />
+
+    <span>SHIPPING DETIALS</span>
+    <div class="shipping">
+
+        <div class="group">
+            <label for="address">Address</label>
+            <input
+                type="address"
+                class="form-input"
+                id="address"
+                required
+                name="address"
+                [(ngModel)]="address"
+            />
+        </div>
+        <div class="group">
+            <label for="zipCode">ZIP Code</label>
+            <input
+                type="zipCode"
+                class="form-input"
+                id="zipCode"
+                required
+                name="zipCode"
+                [(ngModel)]="zipCode"
+            />
+        </div>
+        <div class="group">
+            <label for="city">City</label>
+            <input
+                type="city"
+                class="form-input"
+                id="city"
+                required
+                name="city"
+                [(ngModel)]="city"
+            />
+        </div>
+        <div class="group">
+            <label for="country">Country </label>
+            <input
+                type="country"
+                class="form-input"
+                id="country"
+                required
+                name="country"
+                [(ngModel)]="country"
+            />
+        </div>
     </div>
-    <div class="group">
-        <label for="email">Email</label>
-        <input
-            type="email"
-            class="form-input"
-            id="email"
-            required
-            name="email"
-            [(ngModel)]="email"
-        />
+    <span>PAYMENT DETIALS</span>
+    <div class="payment">
+
+        <div class="group">
+            <label for="cardNumber">Card Number</label>
+            <input
+                type="cardNumber"
+                class="form-input"
+                id="cardNumber"
+                required
+                name="cardNumber"
+                [(ngModel)]="cardNumber"
+            />
+        </div>
+        <div class="group">
+            <label for="exp">EXP: MM/YY</label>
+            <input
+                type="exp"
+                class="form-input"
+                id="exp"
+                required
+                name="exp"
+                [(ngModel)]="exp"
+            />
+        </div>
+        
+        <div class="group">
+            <label for="cvv">CVV </label>
+            <input
+                type="cvv"
+                class="form-input"
+                id="cvv"
+                required
+                name="cvv"
+                [(ngModel)]="cvv"
+            />
+        </div>
     </div>
-    <div class="group">
-        <label for="phone">Phone Number</label>
-        <input
-            type="phone"
-            class="form-input"
-            id="phone"
-            required
-            name="phone"
-            [(ngModel)]="phone"
-        />
-    </div>
-    <div class="group">
-        <label for="password">Password</label>
-        <input
-            type="password"
-            class="form-input"
-            id="password"
-            required
-            name="password"
-            [(ngModel)]="password"
-        />
-    </div>
-    <button
-        class="custom-button"
-        type="submit"
-        [disabled]="!signInForm.form.valid"
-    >
-        Sign Up
-    </button>
+    <app-place-order-btn></app-place-order-btn>
 </form>
