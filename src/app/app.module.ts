@@ -17,7 +17,7 @@ import { SearchBoxComponent } from './component/search-box/search-box.component'
 import { HeaderComponent } from "./component/header/header.component";
 import { ProductComponent } from './component/product/product.component';
 import { ProductsComponent } from './component/products/products.component';
-import { AddToCartBtnComponent } from './component/add-to-cart-btn/add-to-cart-btn.component';
+import { CustomBtn } from "./component/custom-btn/custom-btn.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { AddToCartBtnComponent } from './component/add-to-cart-btn/add-to-cart-b
     HeaderComponent,
     ProductComponent,
     ProductsComponent,
-    AddToCartBtnComponent
+    CustomBtn
+
   ],
   imports: [
     BrowserModule,
