@@ -1,0 +1,21 @@
+<p>user-registration works!</p>
+<h1>Registration</h1>
+<div>
+    <label>Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username">
+    <br>
+    <label>Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password">
+    <br>
+    <label>First Name:</label>
+    <input type="text" id="fName" name="fName" [(ngModel)]="fName">
+    <br>
+    <label>Last Name:</label>
+    <input type="text" id="lName" name="lName" [(ngModel)]="lName">
+    <br>
+    <label>Email:</label>
+    <input type="text" id="email" name="email" [(ngModel)]="email">
+</div>
+
+<input type="submit" value="Register" name="Register"
+    (click)="onClickRegister((username), (password), (fName), (lName), (email))">

@@ -1,0 +1,7 @@
+<p>product-views works!</p>
+<label>View Products</label>
+<input type="submit" id="view-all-products" (click)="viewProducts()">
+<br>
+<ul *ngFor="let product of productList">
+    <li>{{product}}</li>
+</ul>

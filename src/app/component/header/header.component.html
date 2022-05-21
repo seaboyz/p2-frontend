@@ -1,0 +1,31 @@
+<header>
+    <a
+        class="logo-container"
+        routerLink="/"
+    >
+        <img
+            class="logo"
+            src="/assets/logo.svg"
+            alt=""
+        />
+    </a>
+    <div class="options">
+        <a
+            class="option"
+            routerLink="shop"
+        >Shop</a>
+
+        <a class="option">Sign Out</a>
+        <ng-template
+            #signin
+            class="option"
+        >
+            <a routerLink="signin">Sign In</a>
+        </ng-template>
+
+        <a
+            class="option"
+            routerLink="signup"
+        >Sign Up</a>
+    </div>
+</header>
