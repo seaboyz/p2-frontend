@@ -1,10 +1,39 @@
-<h1>Welcome to Bedazzled!</h1>
-<label>Username</label>
-<input type="text" id="username" name="username" [(ngModel)]="username">
-<br>
-<label>Password</label>
-<input type="password" id="password" name="password" [(ngModel)]="password">
-<br>
-<input type="submit" value="Login" name="Login" (click)="onClickLogin((username), (password))">
-<br>
-<input type="submit" value="Register" name="Register" (click)="onClickRegister()">
+<h2>I already have an account</h2>
+<span>Sign in with your eamil and password</span>
+<form
+    (ngSubmit)="onClickLogin(username,password)"
+    #signInForm="ngForm"
+>
+    <div class="group">
+        <label for="email">Username</label>
+        <input
+            type="email"
+            class="form-input"
+            id="email"
+            required
+            name="email"
+            [(ngModel)]="username"
+        />
+    </div>
+    <div class="group">
+        <label for="password">Password</label>
+        <input
+            type="password"
+            class="form-input"
+            id="password"
+            required
+            name="password"
+            [(ngModel)]="password"
+        />
+    </div>
+    <div style="display: flex; justify-content: space-between">
+        <button
+            class="custom-button"
+            type="submit"
+            [disabled]="!signInForm.form.valid"
+        >
+            Sign In
+        </button>
+
+    </div>
+</form>
