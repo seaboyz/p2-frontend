@@ -19,9 +19,11 @@ header {
         align-items: center;
         justify-content: flex-end;
         cursor: pointer;
+        position: relative;
 
         .option {
             padding: 10px 15px;
+
         }
     }
 }

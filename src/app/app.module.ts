@@ -18,6 +18,9 @@ import { HeaderComponent } from "./component/header/header.component";
 import { ProductComponent } from './component/product/product.component';
 import { ProductsComponent } from './component/products/products.component';
 import { CustomBtn } from "./component/custom-btn/custom-btn.component";
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CheckoutItemComponent } from './component/checkout-item/checkout-item.component';
+import { PlaceOrderBtnComponent } from './component/place-order-btn/place-order-btn.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { CustomBtn } from "./component/custom-btn/custom-btn.component";
     HeaderComponent,
     ProductComponent,
     ProductsComponent,
-    CustomBtn
+    CustomBtn,
+    CheckoutComponent,
+    CheckoutItemComponent,
+    PlaceOrderBtnComponent
 
   ],
   imports: [
