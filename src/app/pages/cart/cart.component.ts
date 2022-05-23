@@ -19,7 +19,7 @@ export class CartComponent implements OnInit
   {
     this.cartService.cartItems.subscribe(cartItems => this.cartItems = cartItems)
 
-    this.cartService.cartItems.subscribe(cartItems => this.totalPrice = this.cartItems.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0))
+    this.cartService.cartItems.subscribe(cartItems => this.totalPrice = cartItems.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0))
 
   }
 

@@ -8,7 +8,8 @@ import { HttpHeaders, HttpRequest } from '@angular/common/http';
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.scss']
 })
-export class UserRegistrationComponent implements OnInit {
+export class UserRegistrationComponent implements OnInit
+{
 
   constructor(private userService: UserService) { }
 
@@ -18,7 +19,8 @@ export class UserRegistrationComponent implements OnInit {
   lName: String = "";
   email: String = "";
 
-  onClickRegister(username: String, password: String, fName: String, lName: String, email: String) {
+  onClickRegister(username: String, password: String, fName: String, lName: String, email: String)
+  {
     let user = new User(this.username, this.password, this.fName, this.lName, this.email);
     let options = {
       headers: new HttpHeaders({
@@ -28,7 +30,8 @@ export class UserRegistrationComponent implements OnInit {
     this.userService.createUser(user, options).subscribe((data) => { console.log("returned data: ", data) })
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
   }
 
 }
