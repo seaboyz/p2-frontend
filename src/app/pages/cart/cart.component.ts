@@ -18,6 +18,9 @@ export class CartComponent implements OnInit
   ngOnInit(): void
   {
     this.cartService.cartItems.subscribe(cartItems => this.cartItems = cartItems)
+
+    this.cartService.cartItems.subscribe(cartItems => this.totalPrice = this.cartItems.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0))
+
   }
 
 }
