@@ -1,9 +1,7 @@
+import { Product } from "src/app/services/product.service";
 
 
-export interface CartItem
+export interface CartItem extends Product
 {
-    id: number;
-    name: string;
-    quantity: number;
-    price: number;
+    quantity: number
 }

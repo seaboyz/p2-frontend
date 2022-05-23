@@ -58,6 +58,7 @@ export class Product
     this.price = _price;
     this.productId = _productId;
     this.image = _image;
-
   }
+
+  
 }

@@ -1,22 +1,31 @@
 <div class='checkout-item'>
     <div class='image-container'>
         <img
-            src={item.imageUrl}
-            alt={item.name}
+            src={{cartItem.image}}
+            alt={{cartItem.name}}
         />
     </div>
     <div class='name'>{{cartItem.name}}</div>
     <div class='quantity'>
-        <div>
+        <div
+            style="cursor: pointer;"
+            (click)="decreaseQuantity()"
+        >
             &#10094;
         </div>
         <span>{{cartItem.quantity}}</span>
-        <div>
+        <div
+            style="cursor: pointer;"
+            (click)="increaceQuantity()"
+        >
             &#10095;
         </div>
     </div>
     <div class='price'>{{cartItem.price}}</div>
-    <div class='remove-button'>
+    <div
+        class='remove-button'
+        (click)="remove()"
+    >
         &#10005;
     </div>
 </div>
