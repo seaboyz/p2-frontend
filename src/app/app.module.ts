@@ -23,6 +23,7 @@ import { CartItemComponent } from './component/cart-item/cart-item.component';
 import { PlaceOrderBtnComponent } from './component/place-order-btn/place-order-btn.component';
 import { CheckoutBtnComponent } from './component/checkout-btn/checkout-btn.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CartIconComponent } from './component/cart-icon/cart-icon.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     CartItemComponent,
     PlaceOrderBtnComponent,
     CheckoutBtnComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CartIconComponent
 
   ],
   imports: [
