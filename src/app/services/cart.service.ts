@@ -14,21 +14,40 @@ interface CartItem extends Product
 
 export class CartService
 {
-  cartItems: CartItem[] = []
+  placeholder = [];
+  cartItems = new BehaviorSubject<CartItem[]>([]);
 
-  numberOfItemsInCart = new BehaviorSubject(this.cartItems);
+  constructor()
+  {
+    const storage: CartItem[] = JSON.parse(localStorage.getItem("cart")!);
+    if (storage) {
+      this.cartItems.next(storage);
+    } else {
+      localStorage.setItem("cart", JSON.stringify([]))
+    }
 
-  constructor() { }
+  }
 
   addItem(itemToAdd: Product)
   {
-    const existItem = this.cartItems.find(cartitem => cartitem.productId === itemToAdd.productId)
-    if (existItem) {
-      existItem.quantity++;
-    } else {
-      this.cartItems.push({ ...itemToAdd, quantity: 1 })
-    }
-    this.numberOfItemsInCart.next(this.cartItems)
 
+    const cartItemsFromLocalStorage: CartItem[] = JSON.parse(localStorage.getItem("cart")!);
+
+    let exitItem: CartItem | undefined = cartItemsFromLocalStorage.find(cartItem => cartItem.productId === itemToAdd.productId);
+
+    if (exitItem) {
+      exitItem.quantity++;
+      this.cartItems.next([...cartItemsFromLocalStorage])
+      // localStorage.setItem("cart", JSON.stringify([...cartItemsFromLocalStorage, exitItem]))
+      this.setLocalstorage([...cartItemsFromLocalStorage])
+    } else {
+      this.cartItems.next([...cartItemsFromLocalStorage, { ...itemToAdd, quantity: 1 }]);
+      this.setLocalstorage([...cartItemsFromLocalStorage, { ...itemToAdd, quantity: 1 }]);
+    }
+  }
+
+  setLocalstorage(data: CartItem[])
+  {
+    localStorage.setItem("cart", JSON.stringify(data))
   }
 }
