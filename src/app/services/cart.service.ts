@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
 import { CartItem } from "../shared/interface/cartItem";
 import { Product } from "./product.service";
@@ -9,21 +9,25 @@ import { Product } from "./product.service";
 })
 
 
-export class CartService
+export class CartService implements OnInit
 {
   placeholder = [];
   cartItems = new BehaviorSubject<CartItem[]>([]);
 
   constructor()
   {
+  }
+
+  ngOnInit(): void {
     const storage: CartItem[] = JSON.parse(localStorage.getItem("cart")!);
     if (storage) {
       this.cartItems.next(storage);
     } else {
       localStorage.setItem("cart", JSON.stringify([]))
     }
-
   }
+
+
 
   addItem(itemToAdd: Product)
   {
@@ -64,7 +68,7 @@ export class CartService
     let exitItem: CartItem | undefined = cartItemsFromLocalStorage.find(cartItem => cartItem.productId === cartItemToDecrease.productId);
 
     if (!exitItem) return;
-    if(exitItem.quantity==1){
+    if (exitItem.quantity == 1) {
       this.remove(cartItemToDecrease);
       return;
     }
