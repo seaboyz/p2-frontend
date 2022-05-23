@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User, UserService } from '../../services/user.service';
 import { HttpHeaders, HttpRequest } from '@angular/common/http';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -11,7 +12,7 @@ import { HttpHeaders, HttpRequest } from '@angular/common/http';
 export class UserRegistrationComponent implements OnInit
 {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   username: String = "";
   password: String = "";
@@ -27,7 +28,11 @@ export class UserRegistrationComponent implements OnInit
         'Content-Type': 'application/json'
       })
     }
-    this.userService.createUser(user, options).subscribe((data) => { console.log("returned data: ", data) })
+    this.userService.createUser(user, options).subscribe((data) =>
+    {
+      console.log("returned data: ", data);
+      this.router.navigateByUrl("/user-login");
+    })
   }
 
   ngOnInit(): void
