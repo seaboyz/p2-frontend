@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from "rxjs";
 import { Product } from "./product.service";
 
 interface CartItem extends Product
@@ -15,6 +16,8 @@ export class CartService
 {
   cartItems: CartItem[] = []
 
+  numberOfItemsInCart = new BehaviorSubject(this.cartItems);
+
   constructor() { }
 
   addItem(itemToAdd: Product)
@@ -25,6 +28,7 @@ export class CartService
     } else {
       this.cartItems.push({ ...itemToAdd, quantity: 1 })
     }
-    console.log(this.cartItems)
+    this.numberOfItemsInCart.next(this.cartItems)
+
   }
 }

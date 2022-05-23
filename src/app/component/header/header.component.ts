@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from "src/app/services/cart.service";
 import { User } from "src/app/shared/interface/user";
 
 @Component({
@@ -16,9 +17,8 @@ export class HeaderComponent implements OnInit
 
   constructor() { }
 
-  ngOnInit(): void
-  {
-  }
+  ngOnInit() { }
+
 
   signOut()
   {
